@@ -11,7 +11,27 @@ body {
   font-size: 0.75rem;
 }
 
-.form-input-container label {
+.form-input-container label:not(.form-radio-input-label) {
+  color: #000;
+  font-size: 0.875rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.form-radio-input-label {
+  color: #000;
+  font-size: 0.875rem;
+  font-weight: bold;
+  display: block;
+}
+
+.form-radio-input-container {
+  display: flex;
+}
+
+.form-radio-input-title {
   color: #000;
   font-size: 0.875rem;
   font-weight: bold;

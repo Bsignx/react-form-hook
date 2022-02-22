@@ -44,36 +44,52 @@ function App() {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="form-input-container">
-        <label>Are you a Developer?</label>
-        Yes
-        <input type="radio" {...register("isDeveloper")} value="yes" />
-        No
-        <input type="radio" {...register("isDeveloper")} value="no" />
-        <p className="error">{errors.isDeveloper?.message}</p>
+        <p className="form-radio-input-title">Are you a Developer?</p>
+
+        <div className="form-radio-input-container">
+          <label htmlFor="yes">Yes</label>
+          <input
+            type="radio"
+            id="yes"
+            {...register("isDeveloper")}
+            value="yes"
+          />
+        </div>
+
+        <div className="form-radio-input-container">
+          <label htmlFor="no">No</label>
+          <input type="radio" id="no" {...register("isDeveloper")} value="no" />
+        </div>
+
+        {errors.isDeveloper && (
+          <p className="error">{errors.isDeveloper?.message}</p>
+        )}
       </div>
 
       <div className="form-input-container">
-        <label>First Name</label>
-        <input type="text" {...register("firstName")} />
-        <p className="error">{errors.firstName?.message}</p>
+        <label htmlFor="first-name">First Name</label>
+        <input type="text" id="first-name" {...register("firstName")} />
+        {errors.firstName && (
+          <p className="error">{errors.firstName?.message}</p>
+        )}
       </div>
 
       <div className="form-input-container">
-        <label>Last Name</label>
-        <input type="text" {...register("lastName")} />
-        <p className="error">{errors.lastName?.message}</p>
+        <label htmlFor="last-name">Last Name</label>
+        <input type="text" id="last-name" {...register("lastName")} />
+        {errors.lastName && <p className="error">{errors.lastName?.message}</p>}
       </div>
 
       <div className="form-input-container">
-        <label>Age</label>
-        <input type="number" {...register("age")} defaultValue={0} />
-        <p className="error">{errors.age?.message}</p>
+        <label htmlFor="age">Age</label>
+        <input type="number" id="age" {...register("age")} defaultValue={0} />
+        {errors.age && <p className="error">{errors.age?.message}</p>}
       </div>
 
       <div className="form-input-container">
-        <label>Website</label>
-        <input type="text" {...register("website")} />
-        <p className="error">{errors.website?.message}</p>
+        <label htmlFor="website">Website</label>
+        <input type="text" id="website" {...register("website")} />
+        {errors.website && <p className="error">{errors.website?.message}</p>}
       </div>
 
       <div className="buttons-container">
